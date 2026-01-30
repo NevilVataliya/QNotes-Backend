@@ -6,6 +6,7 @@ import {login, logout} from "./store/authSlice"
 import { Footer, Header } from './components'
 import { Outlet } from 'react-router-dom'
 import Skeleton from './components/ui/Skeleton'
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   const [loading, setLoading] = useState(true)
@@ -40,6 +41,7 @@ function App() {
         <Outlet />
       </main>
       <Footer />
+      <Analytics />
     </div>
   ) : (
     <div className='min-h-screen flex flex-col bg-surface-50 dark:bg-surface-900 text-primary-900 dark:text-surface-50 transition-colors'>
@@ -68,6 +70,7 @@ function App() {
           <Skeleton className='h-4 w-56' />
         </div>
       </footer>
+      <Analytics />
     </div>
   )
 }
